@@ -1,4 +1,4 @@
-// variables and constants
+// variables y constantes
 const cartContainer = document.querySelector('.cart-container');
 const productList = document.querySelector('.product-list');
 const cartList = document.querySelector('.cart-list');
@@ -8,13 +8,13 @@ let cartItemID = 1;
 
 eventListeners();
 
-// all event listeners
+// todos los list de events
 function eventListeners(){
     window.addEventListener('DOMContentLoaded', () => {
         loadJSON();
         loadCart();
     });
-    // toggle navbar when toggle button is clicked
+    // boton de nav para desplegar hacia abajo
     document.querySelector('.navbar-toggler').addEventListener('click', () => {
         document.querySelector('.navbar-collapse').classList.toggle('show-navbar');
     });
@@ -24,10 +24,10 @@ function eventListeners(){
         cartContainer.classList.toggle('show-cart-container');
     });
 
-    // add to cart
+    // agregar carrito
     productList.addEventListener('click', purchaseProduct);
 
-    // delete from cart
+    // borrar carrito
     cartList.addEventListener('click', deleteProduct);
 }
 
@@ -173,3 +173,16 @@ function deleteProduct(e){
     localStorage.setItem('products', JSON.stringify(updatedProducts)); // updating the product list after the deletion
     updateCartInfo();
 }
+
+// funcion de musiquita
+
+$(document).ready(function(){
+    ready: function () {
+        $(this).jPlayer("setMedia", {
+            mp3:"";
+        });
+    },
+    
+    swfPath "/js",
+    supplied: mp3
+});
